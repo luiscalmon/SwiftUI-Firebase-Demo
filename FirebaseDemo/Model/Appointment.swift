@@ -14,12 +14,18 @@ struct Appointment: RemoteBackendHelper {
     
     static func <(lhs: Self, rhs: Self) -> Bool { lhs.date < rhs.date }
     static func descriptionView(_ element: Appointment) -> some View {
-        Text(element.date.description + " " + element.text).lineLimit(2)
+        VStack {
+            HStack {
+                Text(element.date, style: .date)
+                Text(element.date, style: .time)
+            }
+            Text(element.text).lineLimit(2)
+        }
     }
     static func detailView(_ element: Binding<Appointment>) -> some View {
         VStack {
             DatePicker(selection: element.date) {
-                Text("Date")
+                EmptyView()
             }
             TextEditor(text: element.text)
         }

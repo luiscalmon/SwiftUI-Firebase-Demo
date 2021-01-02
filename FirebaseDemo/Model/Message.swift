@@ -1,5 +1,5 @@
 //
-//  Classified.swift
+//  Message.swift
 //  FirebaseDemo
 //
 //  Created by Luis Calmon on 2/1/21.
@@ -25,5 +25,5 @@ struct Message: RemoteBackendHelper {
     var userid: String
     var date = Date()
     
-    var text = "new message"
+    var text = "new public message"
 }

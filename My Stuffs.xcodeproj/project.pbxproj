@@ -17,7 +17,7 @@
 		8D9252DE259BC95900D902C9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D9252DD259BC95900D902C9 /* FirebaseAuth */; };
 		8DB1656C259E1DB00099A4F3 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1656B259E1DB00099A4F3 /* UserView.swift */; };
 		8DB165AF25A084B50099A4F3 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB165AE25A084B50099A4F3 /* Row.swift */; };
-		8DB165B225A085B60099A4F3 /* Classified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB165B125A085B60099A4F3 /* Classified.swift */; };
+		8DB165B225A085B60099A4F3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB165B125A085B60099A4F3 /* Message.swift */; };
 		8DD412C9259A32D800E41233 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD412C8259A32D800E41233 /* GoogleService-Info.plist */; };
 		8DD412CC259A33FB00E41233 /* FirestoreBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD412CB259A33FB00E41233 /* FirestoreBackend.swift */; };
 		8DD412D1259A343F00E41233 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD412CE259A343F00E41233 /* Appointment.swift */; };
@@ -36,7 +36,7 @@
 		8D9252D9259BC83900D902C9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		8DB1656B259E1DB00099A4F3 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		8DB165AE25A084B50099A4F3 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
-		8DB165B125A085B60099A4F3 /* Classified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classified.swift; sourceTree = "<group>"; };
+		8DB165B125A085B60099A4F3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8DD412C8259A32D800E41233 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DD412CB259A33FB00E41233 /* FirestoreBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreBackend.swift; sourceTree = "<group>"; };
 		8DD412CE259A343F00E41233 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				8DD412CE259A343F00E41233 /* Appointment.swift */,
 				8DD412CF259A343F00E41233 /* Note.swift */,
 				8DD412D0259A343F00E41233 /* Task.swift */,
-				8DB165B125A085B60099A4F3 /* Classified.swift */,
+				8DB165B125A085B60099A4F3 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8D06FD42259A2E1000F997AB /* Build configuration list for PBXProject "FirebaseDemo" */;
+			buildConfigurationList = 8D06FD42259A2E1000F997AB /* Build configuration list for PBXProject "My Stuffs" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,7 +215,7 @@
 				8DD412D3259A343F00E41233 /* Task.swift in Sources */,
 				8D9252DA259BC83900D902C9 /* UserManager.swift in Sources */,
 				8DB1656C259E1DB00099A4F3 /* UserView.swift in Sources */,
-				8DB165B225A085B60099A4F3 /* Classified.swift in Sources */,
+				8DB165B225A085B60099A4F3 /* Message.swift in Sources */,
 				8DB165AF25A084B50099A4F3 /* Row.swift in Sources */,
 				8DD412D1259A343F00E41233 /* Appointment.swift in Sources */,
 			);
@@ -389,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D06FD42259A2E1000F997AB /* Build configuration list for PBXProject "FirebaseDemo" */ = {
+		8D06FD42259A2E1000F997AB /* Build configuration list for PBXProject "My Stuffs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D06FD54259A2E1500F997AB /* Debug */,

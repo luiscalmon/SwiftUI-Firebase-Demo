@@ -107,7 +107,13 @@ class UserManager: ObservableObject {
         }
     }
     func resetPasswd() {
-        Auth.auth().sendPasswordReset(withEmail: email)
+        Auth.auth().sendPasswordReset(withEmail: email) { [self] in
+            if let error = $0 {
+                commandResult = .result(.failure(error))
+            } else {
+                commandResult = .result(.success(nil))
+            }
+        }
     }
     
     //
@@ -138,6 +144,7 @@ class UserManager: ObservableObject {
                 appointments.delete(user.uid)
                 tasks.delete(user.uid)
                 messages.delete(user.uid)
+                //
                 commandResult = .result(.success(Auth.auth().currentUser))
             }
         }
