@@ -19,12 +19,12 @@ struct ContentView: View {
                 //
                 // Each <Type> added here must also be added in UserManager.deleteUser
                 // This is a very bad design
-                // I've still looking for a better solution
+                // I'm still looking for a better solution
                 //
                 Rows<Note>().tabItem { Text(Note.title) }
                 Rows<Appointment>().tabItem { Text(Appointment.title) }
                 Rows<Task>().tabItem { Text(Task.title) }
-                Rows<Classified>(justOwnElements: false).tabItem { Text(Classified.title) }
+                Rows<Message>(justOwnElements: false).tabItem { Text(Message.title) }
             }
         }
     }

@@ -20,7 +20,7 @@ struct Note: RemoteBackendHelper {
         TextEditor(text: element.text)
     }
     static var title = "Notes"
-    static var container = "NewNotes"
+    static var container = "Notes"
     var id = UUID()
     var userid: String
     var date = Date()

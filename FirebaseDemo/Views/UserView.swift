@@ -23,21 +23,36 @@ struct UserView: View {
             case .waitingVerification:
                 Text("email verification pending")
                 Button(action: { userManager.sendEmailVerification() }) { Text("Resend Email Verification")}
-                    .border(Color.red, width: 2)
+                    .padding()
+                    .background(Color.red).cornerRadius(29)
             case .loggedout:
                 Text("not logged")
             }
             if userManager.status.logged {
-                Button(action: { userManager.signOut() }) { Text("Log Out")}.border(Color.red, width: 2)
+                Button(action: { userManager.signOut() }) { Text("Log Out")}
+                    .padding()
+                    .background(Color.red).cornerRadius(29)
             } else {
-                TextField("Email", text: $userManager.email).border(Color.red, width: 2)
-                TextField("Password", text: $userManager.password).border(Color.red, width: 2)
-                Button(action: {userManager.signIn()}) { Text("Login")}.border(Color.red, width: 2)
-                Button(action: {userManager.signUp()}) { Text("Create User")}.border(Color.red, width: 2)
-                Button(action: {userManager.resetPasswd()}) { Text("Reset password")}.border(Color.red, width: 2)
+                TextField("Email", text: $userManager.email)
+                    .border(Color.primary, width: 1)
+                TextField("Password", text: $userManager.password)
+                    .border(Color.primary, width: 1)
+                HStack {
+                    Button(action: {userManager.signIn()}) { Text("Login")}
+                        .padding()
+                        .background(Color.red).cornerRadius(29)
+                    Button(action: {userManager.signUp()}) { Text("Create User")}
+                        .padding()
+                        .background(Color.red).cornerRadius(29)
+                }
+                Button(action: {userManager.resetPasswd()}) { Text("Reset password")}
+                    .padding()
+                    .background(Color.red).cornerRadius(29)
             }
             if userManager.status.mayDelete {
-                Button(action: { userManager.deleteUser() }) { Text("Delete User")}.border(Color.red, width: 2)
+                Button(action: { userManager.deleteUser() }) { Text("Delete User")}
+                    .padding()
+                    .background(Color.red).cornerRadius(29)
             }
         }
         .padding()

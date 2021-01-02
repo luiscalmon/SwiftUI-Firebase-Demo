@@ -25,7 +25,7 @@ struct Appointment: RemoteBackendHelper {
         }
     }
     static var title = "Agenda"
-    static var container = "NewAgenda"
+    static var container = "Agenda"
     var id = UUID()
     var userid: String
     

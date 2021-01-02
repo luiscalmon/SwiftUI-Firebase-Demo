@@ -26,7 +26,7 @@ struct Task: RemoteBackendHelper {
         }
     }
     static var title = "Tasks"
-    static var container = "NewTask"
+    static var container = "Tasks"
     var id = UUID()
     var userid: String
     var date = Date()

@@ -113,12 +113,12 @@ class UserManager: ObservableObject {
     //
     // Each <Type> added in ContentView.body TabView must also be added here
     // This is a very bad design
-    // I've still looking for a better solution
+    // I'm still looking for a better solution
     //
     let notes = FirestoreBackend<Note>()
     let appointments = FirestoreBackend<Appointment>()
     let tasks = FirestoreBackend<Task>()
-    let classifieds = FirestoreBackend<Classified>()
+    let messages = FirestoreBackend<Message>()
 
     func deleteUser() {
         guard case Status.logged(let user) = status else {
@@ -132,12 +132,12 @@ class UserManager: ObservableObject {
                 //
                 // Each <Type> added in ContentView.body TabView must also be added here
                 // This is a very bad design
-                // I've still looking for a better solution
+                // I'm still looking for a better solution
                 //
                 notes.delete(user.uid)
                 appointments.delete(user.uid)
                 tasks.delete(user.uid)
-                classifieds.delete(user.uid)
+                messages.delete(user.uid)
                 commandResult = .result(.success(Auth.auth().currentUser))
             }
         }

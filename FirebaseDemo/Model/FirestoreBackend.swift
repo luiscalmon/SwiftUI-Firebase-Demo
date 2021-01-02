@@ -62,8 +62,6 @@ class FirestoreBackend<T: RemoteBackendHelper>: ObservableObject {
         }
     }
     func delete(_ userid: String) {
-        let a = documents
-        let b = a.count
         documents.filter {
             $0.documentDATA.userid == userid
         }
