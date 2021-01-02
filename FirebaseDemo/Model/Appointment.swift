@@ -1,0 +1,34 @@
+//
+//  Appoiment.swift
+//  FirestoreDemo
+//
+//  Created by Luis Calmon on 26/12/20.
+//
+
+import SwiftUI
+
+struct Appointment: RemoteBackendHelper {
+    init(userid: String) {
+        self.userid = userid
+    }
+    
+    static func <(lhs: Self, rhs: Self) -> Bool { lhs.date < rhs.date }
+    static func descriptionView(_ element: Appointment) -> some View {
+        Text(element.date.description + " " + element.text).lineLimit(2)
+    }
+    static func detailView(_ element: Binding<Appointment>) -> some View {
+        VStack {
+            DatePicker(selection: element.date) {
+                Text("Date")
+            }
+            TextEditor(text: element.text)
+        }
+    }
+    static var title = "Agenda"
+    static var container = "NewAgenda"
+    var id = UUID()
+    var userid: String
+    
+    var date = Date()
+    var text = "new appoiment"
+}
