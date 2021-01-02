@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Message: RemoteBackendHelper {
+struct Message: GenericHelper {
     init(userid: String) {
         self.userid = userid
     }

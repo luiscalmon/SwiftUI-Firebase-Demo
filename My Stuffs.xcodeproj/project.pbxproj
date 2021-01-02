@@ -18,6 +18,8 @@
 		8DB1656C259E1DB00099A4F3 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1656B259E1DB00099A4F3 /* UserView.swift */; };
 		8DB165AF25A084B50099A4F3 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB165AE25A084B50099A4F3 /* Row.swift */; };
 		8DB165B225A085B60099A4F3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB165B125A085B60099A4F3 /* Message.swift */; };
+		8DB165BC25A123890099A4F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8DB165BB25A123890099A4F3 /* README.md */; };
+		8DB165C325A130CC0099A4F3 /* GenericHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB165C225A130CC0099A4F3 /* GenericHelper.swift */; };
 		8DD412C9259A32D800E41233 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD412C8259A32D800E41233 /* GoogleService-Info.plist */; };
 		8DD412CC259A33FB00E41233 /* FirestoreBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD412CB259A33FB00E41233 /* FirestoreBackend.swift */; };
 		8DD412D1259A343F00E41233 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD412CE259A343F00E41233 /* Appointment.swift */; };
@@ -37,6 +39,8 @@
 		8DB1656B259E1DB00099A4F3 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		8DB165AE25A084B50099A4F3 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		8DB165B125A085B60099A4F3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8DB165BB25A123890099A4F3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8DB165C225A130CC0099A4F3 /* GenericHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GenericHelper.swift; path = Model/GenericHelper.swift; sourceTree = "<group>"; };
 		8DD412C8259A32D800E41233 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DD412CB259A33FB00E41233 /* FirestoreBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreBackend.swift; sourceTree = "<group>"; };
 		8DD412CE259A343F00E41233 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 		8D06FD3E259A2E1000F997AB = {
 			isa = PBXGroup;
 			children = (
+				8DB165BB25A123890099A4F3 /* README.md */,
 				8D06FD49259A2E1000F997AB /* FirebaseDemo */,
 				8D06FD48259A2E1000F997AB /* Products */,
 				8D9252DC259BC95900D902C9 /* Frameworks */,
@@ -81,6 +86,7 @@
 			children = (
 				8DD412C8259A32D800E41233 /* GoogleService-Info.plist */,
 				8D06FD4A259A2E1000F997AB /* FirebaseDemoApp.swift */,
+				8DB165C225A130CC0099A4F3 /* GenericHelper.swift */,
 				8DB1656F259F4DBA0099A4F3 /* Model */,
 				8DB16570259F4DFA0099A4F3 /* Views */,
 				8D06FD4C259A2E1000F997AB /* ContentView.swift */,
@@ -196,6 +202,7 @@
 			files = (
 				8D06FD52259A2E1500F997AB /* Preview Assets.xcassets in Resources */,
 				8D06FD4F259A2E1500F997AB /* Assets.xcassets in Resources */,
+				8DB165BC25A123890099A4F3 /* README.md in Resources */,
 				8DD412C9259A32D800E41233 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +225,7 @@
 				8DB165B225A085B60099A4F3 /* Message.swift in Sources */,
 				8DB165AF25A084B50099A4F3 /* Row.swift in Sources */,
 				8DD412D1259A343F00E41233 /* Appointment.swift in Sources */,
+				8DB165C325A130CC0099A4F3 /* GenericHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luiscalmon.FirebaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -379,6 +388,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luiscalmon.FirebaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Task: RemoteBackendHelper {
+struct Task: GenericHelper {
     init(userid: String) {
         self.userid = userid
     }

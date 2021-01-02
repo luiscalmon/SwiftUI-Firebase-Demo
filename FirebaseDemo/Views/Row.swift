@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Row<T: RemoteBackendHelper>: View {
+struct Row<T: GenericHelper>: View {
     
     let repository: FirestoreBackend<T>
     @Environment(\.presentationMode) var presentationMode

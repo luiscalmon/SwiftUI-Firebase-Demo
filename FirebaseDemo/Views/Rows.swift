@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Rows<T: RemoteBackendHelper>: View {
+struct Rows<T: GenericHelper>: View {
     
     @AppStorage ("userid") var userid: String!
     

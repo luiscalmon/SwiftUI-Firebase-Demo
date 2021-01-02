@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Appointment: RemoteBackendHelper {
+struct Appointment: GenericHelper {
     init(userid: String) {
         self.userid = userid
     }
