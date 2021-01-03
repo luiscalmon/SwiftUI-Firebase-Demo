@@ -13,6 +13,7 @@ class UserManager: ObservableObject {
     @AppStorage ("userid") var userid: String?
         
     enum CommandResult { case processing, result(Result<User?, Error>) }
+    
     @Published private var commandResult = CommandResult.processing {
         didSet {
             if case Status.logged(let user) = status {
@@ -25,41 +26,22 @@ class UserManager: ObservableObject {
     
     enum Status {
         case loggedout, processing, logged(User), waitingVerification(User), error(Error)
-        var logged: Bool {
-            switch self {
-            case .logged:
-                return true
-            default:
-                return false
-            }
-        }
-        var mayDelete: Bool {
-            switch self {
-            case .logged, .waitingVerification:
-                return true
-            default:
-                return false
-            }
-        }
     }
+    
     var status: Status {
         switch commandResult {
         case .processing:
             return .processing
         case .result(let result):
             switch result {
+            case .failure(let error):
+                return .error(error)
             case .success(let user):
                 if let user = user {
-                    if user.isEmailVerified {
-                        return .logged(user)
-                    } else {
-                        return .waitingVerification(user)
-                    }
+                    return user.isEmailVerified ? .logged(user): .waitingVerification(user)
                 } else {
                     return .loggedout
                 }
-            case .failure(let error):
-                return .error(error)
             }
         }
     }
@@ -94,7 +76,7 @@ class UserManager: ObservableObject {
         }
     }
     func sendEmailVerification() {
-        guard case Status.logged(let user) = status, !user.isEmailVerified else {
+        guard case Status.waitingVerification(let user) = status else {
             return
         }
         commandResult = .processing
@@ -127,7 +109,11 @@ class UserManager: ObservableObject {
     let messages = FirestoreBackend<Message>()
 
     func deleteUser() {
-        guard case Status.logged(let user) = status else {
+        let user: User
+        switch status {
+        case .logged(let innerUser), .waitingVerification(let innerUser):
+            user = innerUser
+        default:
             return
         }
         commandResult = .processing
@@ -151,6 +137,7 @@ class UserManager: ObservableObject {
     }
     
     lazy var listenerHandle = Auth.auth().addStateDidChangeListener { self.commandResult = .result(.success($1)) }
+    
     init() {
         let _ = listenerHandle
     }

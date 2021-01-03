@@ -12,7 +12,6 @@
 		8D06FD4F259A2E1500F997AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D06FD4E259A2E1500F997AB /* Assets.xcassets */; };
 		8D06FD52259A2E1500F997AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D06FD51259A2E1500F997AB /* Preview Assets.xcassets */; };
 		8D06FD5C259A2ECB00F997AB /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8D06FD5B259A2ECB00F997AB /* FirebaseFirestoreSwift-Beta */; };
-		8D320E88259C7998004C4076 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D320E87259C7998004C4076 /* FirebaseAnalytics */; };
 		8D9252DA259BC83900D902C9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9252D9259BC83900D902C9 /* UserManager.swift */; };
 		8D9252DE259BC95900D902C9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D9252DD259BC95900D902C9 /* FirebaseAuth */; };
 		8DB1656C259E1DB00099A4F3 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB1656B259E1DB00099A4F3 /* UserView.swift */; };
@@ -35,6 +34,7 @@
 		8D06FD4E259A2E1500F997AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D06FD51259A2E1500F997AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D06FD53259A2E1500F997AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D352F2A25A2411B00C5AA1C /* FirebaseDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseDemo.entitlements; sourceTree = "<group>"; };
 		8D9252D9259BC83900D902C9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		8DB1656B259E1DB00099A4F3 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		8DB165AE25A084B50099A4F3 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
@@ -56,7 +56,6 @@
 			files = (
 				8D06FD5C259A2ECB00F997AB /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				8D9252DE259BC95900D902C9 /* FirebaseAuth in Frameworks */,
-				8D320E88259C7998004C4076 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +83,7 @@
 		8D06FD49259A2E1000F997AB /* FirebaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D352F2A25A2411B00C5AA1C /* FirebaseDemo.entitlements */,
 				8DD412C8259A32D800E41233 /* GoogleService-Info.plist */,
 				8D06FD4A259A2E1000F997AB /* FirebaseDemoApp.swift */,
 				8DB165C225A130CC0099A4F3 /* GenericHelper.swift */,
@@ -154,7 +154,6 @@
 			packageProductDependencies = (
 				8D06FD5B259A2ECB00F997AB /* FirebaseFirestoreSwift-Beta */,
 				8D9252DD259BC95900D902C9 /* FirebaseAuth */,
-				8D320E87259C7998004C4076 /* FirebaseAnalytics */,
 			);
 			productName = FirebaseDemo;
 			productReference = 8D06FD47259A2E1000F997AB /* FirebaseDemo.app */;
@@ -353,8 +352,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = FirebaseDemo/FirebaseDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FirebaseDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = TWW9FQZ5S8;
 				ENABLE_PREVIEWS = YES;
@@ -365,6 +365,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.01;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luiscalmon.FirebaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -377,8 +378,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = FirebaseDemo/FirebaseDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FirebaseDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = TWW9FQZ5S8;
 				ENABLE_PREVIEWS = YES;
@@ -389,6 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.01;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luiscalmon.FirebaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -435,11 +438,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D06FD5A259A2ECB00F997AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
-		};
-		8D320E87259C7998004C4076 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8D06FD5A259A2ECB00F997AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
 		};
 		8D9252DD259BC95900D902C9 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

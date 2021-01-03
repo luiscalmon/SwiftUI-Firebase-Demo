@@ -18,15 +18,7 @@ class FirestoreBackend<T: GenericHelper>: ObservableObject {
     var elements: [T] {
         documents.map { $0.documentDATA }.sorted()
     }
-    init() {
-        self.collection.addSnapshotListener { (querySnapshot, _) in
-            if let querySnapshot = querySnapshot {
-                self.documents = querySnapshot.documents.compactMap {
-                    try? $0.data(as: Document.self)
-                }
-            }
-        }
-    }
+
     func add(_ element: T) {
         let _ = try? collection.addDocument(from: Document(documentDATA: element))
     }
@@ -51,5 +43,20 @@ class FirestoreBackend<T: GenericHelper>: ObservableObject {
                 collection.document(documentID).delete()
             }
         }
+    }
+    
+    lazy var listenerHandle = collection.addSnapshotListener { (querySnapshot, _) in
+        if let querySnapshot = querySnapshot {
+            self.documents = querySnapshot.documents.compactMap {
+                try? $0.data(as: Document.self)
+            }
+        }
+    }
+    
+    init() {
+        let _ = listenerHandle
+    }
+    deinit {
+        listenerHandle.remove()
     }
 }
