@@ -8,6 +8,7 @@
 import SwiftUI
 
 protocol GenericHelper: Codable & Identifiable & Comparable {
+    
     associatedtype C0: View
     associatedtype C1: View
     
@@ -19,4 +20,5 @@ protocol GenericHelper: Codable & Identifiable & Comparable {
     
     var userid: String { get set }
     init(userid: String)
+    
 }
