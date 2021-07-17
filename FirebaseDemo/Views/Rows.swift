@@ -13,6 +13,7 @@ struct Rows<T: GenericHelper>: View {
     
     @ObservedObject var repository = FirestoreBackend<T>()
     @State var newRow = false
+    @State var thanks = false
     var justOwnElements = true
     
     var body: some View {
@@ -32,14 +33,27 @@ struct Rows<T: GenericHelper>: View {
                 }
             }
             .toolbar {
-                Button(action: {
-                    newRow.toggle()
-                }) {
-                    Image(systemName: "plus")
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        newRow.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                    }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        thanks.toggle()
+                    }) {
+                        Image(systemName: "figure.wave")
+                    }
+                }
+
             }
             .sheet(isPresented: $newRow) {
                 Row(repository: repository, row: T(userid: userid), new: true)
+            }
+            .sheet(isPresented: $thanks) {
+                Thanks()
             }
             .navigationBarTitle(Text(T.title))
         }

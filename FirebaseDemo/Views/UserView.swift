@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserView: View {
     
-    @ObservedObject var userManager: UserManager
+    @EnvironmentObject var userManager: UserManager
     
     var body: some View {
         VStack {
