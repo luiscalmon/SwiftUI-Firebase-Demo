@@ -2,6 +2,7 @@
 ## SwiftUI Firebase Demo
 
 A prove of concept iOS app developed in SwiftUI with a Firebase backend.
+In-app purchase has been added to give users the opportunity to support future versions of My Stuff.
 
 ## Backend
 The types that interact with Firebase are:
